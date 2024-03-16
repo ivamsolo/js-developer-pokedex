@@ -8,74 +8,93 @@
 
 .normal {
     background-color: #a6a877;
+    color: black;
 }
 
 .grass {
     background-color: #77c850;
+    color: black;
 }
 
 .fire {
     background-color: #ee7f30;
+    color: black;
 }
 
 .water {
     background-color: #678fee;
+    color: white;
 }
 
 .electric {
     background-color: #f7cf2e;
+    color: black;
 }
 
 .ice {
     background-color: #98d5d7;
+    color: black;
 }
 
 .ground {
     background-color: #dfbf69;
+    color: black;
 }
 
 .flying {
     background-color: #a98ff0;
+    color: white;
 }
 
 .poison {
     background-color: #a040a0;
+    color: white;
 }
 
 .fighting {
     background-color: #bf3029;
+    color: white;
 }
 
 .psychic {
     background-color: #f65687;
+    color: white;
 }
 
 .dark {
     background-color: #725847;
+    color: white;
 }
 
 .rock {
     background-color: #b8a137;
+    color: black;
 }
 
 .bug {
     background-color: #a8b720;
+    color: black;
 }
 
 .ghost {
     background-color: #6e5896;
+    color: white;
+
 }
 
 .steel {
     background-color: #b9b7cf;
+    color: black;
 }
 
 .dragon {
     background-color: #6f38f6;
+    color: white;
 }
 
 .fairy {
     background-color: #f9aec7;
+    color: black;
 }
 
 .pokemon {
@@ -84,6 +103,7 @@
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    overflow: hidden;
 }
 
 .pokemon .number {
@@ -146,20 +166,285 @@
     border-radius: 1rem;
 }
 
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    padding: 25% auto;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding: 10px 0;
+}
+
+#pokemon-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+    padding: ;
+    overflow: auto;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.profile-name {
+    font-size: 1.75rem;
+    text-transform: capitalize;
+}
+
+.profile-id {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #949494;
+}
+
+.close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    color: #949494;
+    font-size: 25px;
+    opacity: 0.5;
+}
+
+.close-button::after {
+    content: "\2716";
+}
+
+.profile-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+}
+
+.profile-image img{
+    max-width: 100%;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #30A7D7;
+    border-radius: 5px;
+    padding: 30px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.table-row {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-header, .table-data {
+    font-size: 1.3rem;
+    text-align: left;
+    text-wrap: nowrap;
+    line-height: 2;
+    width: 50%;
+}
+
+.table-header {
+    font-weight: 300;
+    color: #fff;
+}
+
+.table-data {
+    font-weight: 500;
+    color: #000;
+}
+
+.stats-info {
+    padding: 10px 15px;
+    background-color: #898989;
+    border-radius: 5px;
+}
+
+.stats-info h1 {
+    font-size: 1.12rem;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+}
+
+.stats-info table {
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.stats-info table tr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stats-info table tr:last-child {
+    margin-bottom: 0;
+}
+
+.stats-info table th {
+    width: 100%;
+    font-size: 1.12rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.stats-info table td {
+    width: 100%;
+}
+
+.progress-bar, .progress-level, .progress-label {
+    height: 22px;
+    line-height: 22px;
+}
+
+.progress-bar {
+    position: relative;
+    background-color: #D9D9D9;
+    width: 100%;
+}
+
+.progress-level {
+    background-color: #30A7D7;
+    max-width: 100% !important;
+}
+
+.progress-label {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0 10px;
+    font-weight: light;
+    opacity: 0.5;
+    visibility: hidden;
+}
+
+.progress-bar:hover .progress-label{
+    visibility: visible;
+}
+
+.type-info {
+    width: 100%;
+}
+
+.type-info h1 {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0 15px;
+    margin: 0;
+}
+
+.type-info-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 14px;
+    padding: 0;
+    margin: 10px 0;
+    list-style-type: none;
+}
+
+.type-info-list li {
+    min-width: 92px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+@media (orientation: landscape) {
+    .profile-body {
+        flex-direction: row;
+    }
+    .stats-info table tr {
+        flex-direction: row;
+    }
+}
+
+
+
 @media screen and (min-width: 380px) {
     .pokemons {
         grid-template-columns: 1fr 1fr;
     }
-}
-
-@media screen and (min-width: 576px) {
-    .pokemons {
-        grid-template-columns: 1fr 1fr 1fr;
+    #pokemon-profile {
+        width: 80%;
+    }
+    .table-row {
+        flex-direction: row;
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 481px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #pokemon-profile {
+        width: 70%;
+    }
+    .stats-info table tr {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 769px) {
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    #pokemon-profile {
+        width: 60%;
+    }
+}
+@media screen and (min-width: 1025px) {
+    #pokemon-profile {
+        width: 50%;
+    }
+}
+@media screen and (min-width: 1025px) {
+    #pokemon-profile {
+        width: 40%;
     }
 }
